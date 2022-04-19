@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="container search">
+        <div class="card">
+          <div class="card-body">
+            <!-- <app-form-search></app-form-search> -->
+            <form class="md-form mr-auto mb-8" >
+  
+                <input class="form-control mr-sm-2" type="text" placeholder="Enter repository name" aria-label="Search" [(ngModel)] = 'userName' name='userName' #username='ngModel' (keyup)='findRepo()'>
+                <div class="btn-search">
+                  <button class="btn aqua-gradient btn-rounded btn-lg my-0 center" type="submit">Search</button>
+              
+                </div>
+              
+              </form>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+
+      <div class="row">
+          <div class="col-md-6" *ngFor = 'let repo of repos'>
+            <div class="card rainbow-card" style="max-width: 23rem;margin: 3rem auto;">
+              <div class="card-body">
+                <h5 class="card-title">{{repo.name}}</h5>
+                <p class="card-text"><span>{{repo.description}}</span></p>
+                <div class="d-flex card-menu">
+                  <!-- <a href="#!" class="btn btn-sm btn-flat">Skip for now</a> -->
+                  <a href="{{repo.html_url}}" class="btn btn-sm btn-primary">View on Github</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          
+        </div>
+
+</div>

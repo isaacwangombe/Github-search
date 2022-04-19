@@ -1,0 +1,29 @@
+.home {
+    width: 100%;
+height: 80vh;
+padding-top: 20px;
+} 
+
+.leftItems{
+    height: 100%;
+display: grid;
+place-items: center;
+}
+
+.input_box{
+width: 30em;
+margin: auto;
+}
+
+.input_container{
+padding: 20px;
+}
+
+.arrow{
+    height: 50px;
+}
+
+.repo_cards{
+    max-width: 23rem;margin: 3rem auto;
+    min-height: 12rem;margin: 3rem auto;
+}
