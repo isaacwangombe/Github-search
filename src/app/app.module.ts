@@ -11,7 +11,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { RepositoryComponent } from './components/repository/repository.component';
 import { DatePipe } from './date.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HighlightDirective } from './highlight.directive';
+import { CircleImgDirective } from './circle-img.directive';
 
 
 
@@ -22,7 +22,7 @@ import { HighlightDirective } from './highlight.directive';
     DatePipe,
     HomepageComponent,
     NavbarComponent,
-    HighlightDirective,
+    CircleImgDirective,
 
   ],
   imports: [

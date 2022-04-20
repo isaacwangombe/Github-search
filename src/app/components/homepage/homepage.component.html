@@ -1,74 +1,73 @@
-<section class="container home " >
-  <div class="row ">
-    <div class="col-sm-5 text-center">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{user.login}}</h5>
-          <p class="card-text">{{user.location}}</p>
+<section class="container home ">
+    <div class="row ">
+        <div class="col-sm-5 text-center">
+            <div class="card" style="width: 18rem;">
+                <img appCircleImg class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{user.login}}</h5>
+                    <p class="card-text">{{user.location}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Joined on <br> {{user.created_at| date}}</li>
+                    <h6 class="list-group-item"> followers:{{user.followers}} <br> following:{{user.following}}</h6>
+                </ul>
+                <div class="card-body">
+                    <button class="btn btn-primary"><a href="{{user.html_url}}" class="card-link"></a>Github link</button>
+                </div>
+            </div>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Joined on <br> {{user.created_at| date}}</li>
-          <h6 class="list-group-item"> followers:{{user.followers}}  <br> following:{{user.following}}</h6>
-        </ul>
-        <div class="card-body">
-          <button class="btn btn-primary"><a href="{{user.html_url}}" class="card-link"></a>Github link</button>
+        <div class="col-sm-5 leftItems">
+            <form class=" card text-center  input_container" style="width: 40rem;">
+                <div>
+                    <h4>Search for Users</h4>
+                </div>
+
+                <input class="form-control input_box" type="text" placeholder="Enter User Name" aria-label="Search" [(ngModel)]='userName' name='userName' #username='ngModel' (keyup)='findUser()'>
+                <div class="btn-search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+
+                </div>
+
+            </form>
+            <br>
+            <!-- <a routerLink="repository"  target="blank" routerLinkActive="active"><button class="btn btn-primary">Search User Repositories</button></a> -->
+
+            <br>
+            <div class="card " style="width: 40rem;">
+                <div class="card-header">
+                    Info
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Name: {{user.name}}</li>
+                    <li class="list-group-item">About: {{user.blog}}</li>
+                    <li class="list-group-item">Public Repos: {{user.public_repos}}</li>
+                    <li class="list-group-item">Twitter: {{user.twitter_username}}</li>
+                    <li class="list-group-item">Company: {{user.company}}</li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-sm-5 leftItems">
-      <form class=" card text-center  input_container" style="width: 40rem;">
-        <div>
-          <h4>Search for Users</h4>
-        </div>
-  
-          <input class="form-control input_box" type="text" placeholder="Enter User Name" aria-label="Search"
-            [(ngModel)]='userName' name='userName' #username='ngModel' (keyup)='findUser()'>
-          <div class="btn-search">
-            <button class= "btn btn-primary"type="submit">Search</button>
-
-          </div>
-
-        </form>
-        <br>
-        <a routerLink="repository"  target="blank" routerLinkActive="active"><button class="btn btn-primary">Search User Repositories</button></a>
-
-      <br>
-      <div class="card " style="width: 40rem;">
-        <div class="card-header">
-          Info
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Name: {{user.name}}</li>
-          <li class="list-group-item">About: {{user.blog}}</li>
-          <li class="list-group-item">Public Repos: {{user.public_repos}}</li>
-          <li class="list-group-item">Twitter: {{user.twitter_username}}</li>
-          <li class="list-group-item">Company: {{user.company}}</li>
-        </ul>
-      </div>
+    <div>
     </div>
-  </div>
-  <div>
-</div>
-<br>
+    <br>
 
-<section class="container repos text-center" >
-  <div class="heading" *ngIf='user'>
-    <h1>Repositories</h1>
-  </div>
-  <div class="row ">
-    <div class="col-md-6" *ngFor='let repo of repos'>
-      <div class="card repo_cards" >
-        <div class="card-body">
-          <h5 class="card-title">{{repo.name}}</h5>
-          <p class="card-text"><span>{{repo.description}}</span></p>
-            <a href="{{repo.html_url}}" class="btn btn btn-primary">View on Github</a>
+    <section class="container repos text-center">
+        <div class="heading" *ngIf='user'>
+            <h1>Repositories</h1>
         </div>
-      </div>
+        <div class="row " appHighlight>
+            <div class="col-md-6" *ngFor='let repo of repos' appHighlight>
+                <div class="card repo_cards">
+                    <div class="card-body">
+                        <h5 class="card-title">{{repo.name}}</h5>
+                        <p class="card-text"><span>{{repo.description}}</span></p>
+                        <a href="{{repo.html_url}}" target="_blank" class="btn btn btn-primary">View on Github</a>
+                    </div>
+                </div>
 
-    </div>
+            </div>
 
 
-  </div>
+        </div>
 
-</section>
+    </section>
