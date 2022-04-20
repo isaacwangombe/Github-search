@@ -13,8 +13,10 @@ export class RepositoryService {
   constructor(
     private http: HttpClient
   ) {
-    this.repos = new Repository("", "", 0, "", new Date);
+    this.repos = new Repository("", "", 0, "", new Date, "");
   }
+
+ 
 
   getRepoInformation() {
     interface ApiResponse {
@@ -23,19 +25,18 @@ export class RepositoryService {
       forks: number;
       html_url: string;
       created_at: Date;
+      full_name: string;
 
     }
 
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/users/" + this.userName + "clientId=" + environment.clientId + "&clientSecret=" + environment.clientSecret).toPromise().then(response => {
+      this.http.get<ApiResponse>("https://api.github.com/users/" + this.userName + "/repos?clientId=" + environment.clientId + "&clientSecret=" + environment.clientSecret).toPromise().then(response => {
           
           this.repos = response       
 
           resolve()
         },
           error => {
-            //this.profile.name = "Error"
-            //this.quote.author = "Winston Churchill"
 
             reject(error)
           })

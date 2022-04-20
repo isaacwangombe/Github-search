@@ -4,7 +4,9 @@ export class Repository {
     public description: string,
     public forks: number,
     public html_url: string,
-    public created_at : Date
+    public created_at : Date,
+    public full_name: string
+
 
   ) {}
   }

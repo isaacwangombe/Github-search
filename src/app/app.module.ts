@@ -4,7 +4,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './user.service';
 
-import { SearchComponent } from './components/search/search.component';
 import { RepositoryService } from './repository.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +19,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppComponent,
     RepositoryComponent,
     DatePipe,
-    SearchComponent,
     HomepageComponent,
     NavbarComponent,
 
