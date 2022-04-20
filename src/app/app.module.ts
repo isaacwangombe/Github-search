@@ -11,6 +11,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { RepositoryComponent } from './components/repository/repository.component';
 import { DatePipe } from './date.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HighlightDirective } from './highlight.directive';
 
 
 
@@ -21,6 +22,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DatePipe,
     HomepageComponent,
     NavbarComponent,
+    HighlightDirective,
 
   ],
   imports: [
