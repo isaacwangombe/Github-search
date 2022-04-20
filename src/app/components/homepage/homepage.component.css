@@ -4,6 +4,12 @@ height: 80vh;
 padding-top: 20px;
 } 
 
+a{
+    text-decoration: none;
+    color: white;
+
+}
+
 .leftItems{
     height: 100%;
 display: grid;

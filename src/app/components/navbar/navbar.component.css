@@ -12,4 +12,8 @@ nav{
 
 h4{
     padding: 10px;
+    color: black;
+}
+a{
+    text-decoration: none;
 }
