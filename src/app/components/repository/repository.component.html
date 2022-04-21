@@ -1,39 +1,39 @@
 <div class="container">
     <div class="container search">
         <div class="card">
-          <div class="card-body">
-            <!-- <app-form-search></app-form-search> -->
-            <form>
-  
-                <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search" [(ngModel)] = 'userName' name='userName' #username='ngModel' (keyup)='findRepo()'>
-                <div class="btn-search">
-                  <button class="btn btn-primary " type="submit">Search</button>
-              
-                </div>
-              
-              </form>
-  
-          </div>
-  
-        </div>
-  
-      </div>
+            <div class="card-body">
+                <!-- <app-form-search></app-form-search> -->
+                <form>
 
-      <div class="row">
-          <div class="col-md-6" *ngFor = 'let repo of repos'>
-            <div class="card rainbow-card" style="max-width: 23rem;margin: 3rem auto;">
-              <div class="card-body">
-                <h5 class="card-title">{{repo.full_name}}</h5>
-                <p class="card-text"><span>{{repo.description}}</span></p>
-                <div class="d-flex card-menu">
-                  <a href="{{repo.html_url}}" class="btn btn-primary" target="blank">View on Github</a>
-                </div>
-              </div>
+                    <input class="form-control" type="text" placeholder="Enter repository name" aria-label="Search" [(ngModel)]='userName' name='userName' #username='ngModel' (keyup)='findRepo()'>
+                    <div class="btn-search">
+                        <button class="btn btn-primary " type="submit">Search</button>
+
+                    </div>
+
+                </form>
+
             </div>
 
-          </div>
-
-          
         </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6" *ngFor='let repo of repos'>
+            <div class="card rainbow-card" style="max-width: 23rem;margin: 3rem auto;">
+                <div class="card-body">
+                    <h5 class="card-title">{{repo.full_name}}</h5>
+                    <p class="card-text"><span>{{repo.description}}</span></p>
+                    <div class="d-flex card-menu">
+                        <a href="{{repo.html_url}}" class="btn btn-primary" target="blank">View on Github</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
 
 </div>
