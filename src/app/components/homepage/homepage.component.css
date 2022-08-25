@@ -1,34 +1,51 @@
-.home {
-    width: 100%;
-height: 80vh;
-padding-top: 20px;
-} 
-
-*{
-    text-decoration: none;
-
+* {
+  text-decoration: none;
+}
+body {
+  background-color: rgb(208, 246, 233);
+  height: 100%;
+}
+section {
+  padding-top: 100px;
 }
 
-.leftItems{
-    height: 100%;
-display: grid;
-place-items: center;
+.leftItems {
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
-.input_box{
-width: 30em;
-margin: auto;
+.input_box {
+  width: 30em;
+  margin: auto;
 }
 
-.input_container{
-padding: 20px;
+.input_container {
+  padding: 20px;
 }
 
-.arrow{
-    height: 50px;
+.arrow {
+  height: 50px;
 }
 
-.repo_cards{
-    max-width: 23rem;margin: 3rem auto;
-    min-height: 12rem;margin: 3rem auto;
+.repo_cards {
+  max-width: 23rem;
+  margin: 3rem auto;
+  min-height: 12rem;
+  margin: 3rem auto;
+}
+.items {
+  display: grid;
+  place-items: center;
+  gap: 5vw;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.card {
+  padding: 15px;
+  background-color: rgb(117, 192, 197);
+}
+
+.list-group-item {
+  background-color: rgb(208, 246, 233);
 }

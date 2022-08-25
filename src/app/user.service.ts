@@ -3,33 +3,58 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { User } from './class/user';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-
   private repoName: string;
   profile: User;
-  userName:string;
-
-
+  userName: string;
 
   constructor(private http: HttpClient) {
-
-    this.profile = new User("", "", "", "", "", "","","", 0, 0, 0,new Date,"",);
-    this.userName = "isaacmariga";
-
+    this.profile = new User(
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      0,
+      0,
+      0,
+      new Date(),
+      ''
+    );
+    this.userName = 'isaacmariga';
   }
 
-  getUsers(){
-    return this.http.get("https://api.github.com/users/" + this.userName + "?clientId=" + environment.clientId
-    + "&clientSecret=" + environment.clientSecret);
+  updateUser(userName: string) {
+    this.userName = userName;
   }
 
-  getRepos(){
-   return this.http.get("https://api.github.com/users/" + this.userName + "/repos?clientId=" + environment.clientId + "&clientSecret=" + environment.clientSecret);
- }
+  getUsers() {
+    return this.http.get(
+      'https://api.github.com/users/' +
+        this.userName +
+        '?clientId=' +
+        environment.clientId +
+        '&clientSecret=' +
+        environment.clientSecret
+    );
+  }
+
+  getRepos() {
+    return this.http.get(
+      'https://api.github.com/users/' +
+        this.userName +
+        '/repos?clientId=' +
+        environment.clientId +
+        '&clientSecret=' +
+        environment.clientSecret
+    );
+  }
 
   getUserInfo() {
     interface ApiResponse {
@@ -42,40 +67,35 @@ export class UserService {
       following: number;
       followers: number;
       html_url: string;
-      blog:string;
+      blog: string;
       location: string;
-      bio:string;
+      bio: string;
       twitter_username: string;
-      public_repos:number;
-
+      public_repos: number;
     }
 
-
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/users/" + this.userName + "?clientId=" + environment.clientId
-        + "&clientSecret=" + environment.clientSecret).toPromise().then(response => {
-          
-          this.profile = response       
+      this.http
+        .get<ApiResponse>(
+          'https://api.github.com/users/' +
+            this.userName +
+            '?clientId=' +
+            environment.clientId +
+            '&clientSecret=' +
+            environment.clientSecret
+        )
+        .toPromise()
+        .then(
+          (response) => {
+            this.profile = response;
 
-          resolve()
-        },
-          error => {
-            //this.profile.name = "Error"
-            //this.quote.author = "Winston Churchill"
-
-            reject(error)
-          })
-    })
-    return promise
+            resolve();
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
+    return promise;
   }
-  
-  
-
-  updateUser(userName:string) {
-    this.userName = userName;
-
-  }
-
-
 }
-
