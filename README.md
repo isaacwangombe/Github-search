@@ -6,7 +6,7 @@ This is a web application will allow a user to search for other github users pro
 
 ## Landing Page
 
-![Alt text](/src/assets/search.png)
+![Alt text](/src/assets/gitsearch.png)
 
 ## Demo
 
