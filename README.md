@@ -1,21 +1,58 @@
-{Github-search Website}
-{A website where users may search for Github names and repositories}, {19/04/2022}
-By {Isaac Wangombe}
-Description
-{A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories}
+# Marigarated
 
-Setup/Installation Requirements
-None
+## Description
 
-Live link
-Follow the link https://isaacmariga.github.io/Github-search/
-Known Bugs
-N/A
-Technologies Used
-The site was built with HTML, CSS and Typescript on the Angular framework
+This is a web application will allow a user to search for other github users profiles and view their details and repositories.
 
-Support and contact details
-{contact: email: nimariga@gmail.com}
+## Landing Page
 
-License
-This is under the MIT license Copyright (c) {2022} {Isaac Wangombe}
+![Alt text](/src/assets/search.png)
+
+## Demo
+
+You can demo the site **[here.](https://isaacmariga.github.io/Github-search/)**
+
+## Features
+
+- Search for github users
+- View their profile details
+- View their repositories
+- Go to their github pages and repositories
+
+# Specifications
+
+## Setup/Installation Requirements
+
+Here is a run through of how to set up the application:
+
+- Step 1 : Clone this repository using the git clone link:
+  - **`https://github.com/isaacmariga/Github-search.git`**
+- Step 2 : Navigate to the directory:
+  - **`cd Github-search`**
+- Step 3 : Open the directory created with your favorite IDE. if VSCode type **`code .`** . This will launch the editor with the project setup,
+- Now feel free to hack around the project.
+
+## Known Bugs
+
+- None currently.
+
+## Technologies Used
+
+- Angular
+- Typescript
+- HTML, CSS and Bootstrap
+- Github
+
+### Author
+
+**[Isaac Wangombe.](https://github.com/isaacmariga) 16/03/2022.**
+
+## Support and contact details
+
+Primary E-mail Address: inmariga@gmail.com
+
+### License
+
+_MIT License_ [![License: MIT]](license/MIT)
+
+Copyright (c) 2019 **Isaac Wangombe**
